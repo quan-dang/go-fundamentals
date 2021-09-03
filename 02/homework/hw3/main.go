@@ -19,9 +19,6 @@ func main() {
 	randomNumber = rand.Intn(100)
 
 	for x != -1 {
-		if x == -1 {
-			break
-		}
 		x, err = readNumberFromKeyboard("Nhap x: ")
 		if err != nil {
 			fmt.Print(err.Error())
