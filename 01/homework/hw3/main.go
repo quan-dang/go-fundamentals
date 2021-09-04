@@ -16,9 +16,11 @@ func main() {
 		randomNumber int
 	)
 
+	// generate the random number to guess
 	randomNumber = rand.Intn(100)
 
 	for x != -1 {
+		// input x from keyboard
 		x, err = readNumberFromKeyboard("Nhap x: ")
 		if err != nil {
 			fmt.Print(err.Error())
@@ -36,7 +38,7 @@ func main() {
 	}
 }
 
-// read from keyboard and convert string to float
+// read from keyboard and convert string to int
 func readNumberFromKeyboard(msg string) (result int, err error) {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print(msg)

@@ -16,6 +16,8 @@ func main() {
 		b   float64
 		c   float64
 	)
+
+	// input a, b, c from keyboard
 	a, err = readNumberFromKeyboard("a: ")
 	if err != nil {
 		fmt.Print(err.Error())
@@ -34,6 +36,7 @@ func main() {
 		return
 	}
 
+	// solve quadractic equation
 	x1, x2 := solveQuadraticEquation(a, b, c)
 	fmt.Println("x1: ", x1)
 	fmt.Println("x2: ", x2)
