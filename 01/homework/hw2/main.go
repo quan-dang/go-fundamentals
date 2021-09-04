@@ -17,7 +17,7 @@ func main() {
 	)
 
 	// generate the random number to guess
-	randomNumber = rand.Intn(100)
+	randomNumber = rand.Intn(101)
 
 	for x != -1 {
 		// input x from keyboard
