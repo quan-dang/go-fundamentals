@@ -29,7 +29,7 @@ func main() {
 	}
 
 	var (
-		// err     error
+		err     error
 		feature int64
 	)
 
@@ -38,13 +38,11 @@ func main() {
 	fmt.Println("2. Sap xep nhan vien muc luong giam dan")
 	fmt.Println("3. Danh sach nhan vien co muc luong lon thu 2")
 	// input a, b, c from keyboard
-	// feature, err = readNumberFromKeyboard("Nhap chuc nang: ")
-	// if err != nil {
-	// 	fmt.Print(err.Error())
-	// 	return
-	// }
-
-	feature = 3
+	feature, err = readNumberFromKeyboard("Nhap chuc nang: ")
+	if err != nil {
+		fmt.Print(err.Error())
+		return
+	}
 
 	switch feature {
 	case 1:
@@ -74,7 +72,7 @@ func calculateSalary(danhSach Person) float32 {
 // sort danhSach by salary
 func sortBySalary(danhSach []Person) []Person {
 	sort.SliceStable(danhSach, func(i int, j int) bool {
-		return calculateSalary(danhSach[i]) < calculateSalary(danhSach[j])
+		return calculateSalary(danhSach[i]) > calculateSalary(danhSach[j])
 	})
 	return danhSach
 }
